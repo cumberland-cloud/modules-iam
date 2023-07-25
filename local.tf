@@ -10,12 +10,9 @@ locals {
         lambda                  = {
             domain              = "lambda.amazonaws.com"
             name                = "lambda-executor"
-            attachments         = {
-
-            }
+            attachments         = { }
         }
     }
-
     service_attachments         = flatten([
         for role_key, role in local.service_roles: [
             for policy_key, policy_arn in role.attachments: {
@@ -27,5 +24,8 @@ locals {
     service_attachment_map      = {
         for index, attachment in local.service_attachments:
             index               => attachment
+    }
+    tenant_attachment_map       = {
+
     }
 }

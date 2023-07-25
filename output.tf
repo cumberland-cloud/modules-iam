@@ -8,3 +8,11 @@ output "services_roles" {
             }
     }
 }
+
+output "tenant_role" {
+    value               = {
+        arn             = aws_iam_role.tenant_role.arn
+        id              = aws_iam_role.tenant_role.id
+        name            = aws_iam_role.tenant_role.name
+    }
+}
