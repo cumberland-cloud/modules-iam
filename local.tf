@@ -12,6 +12,11 @@ locals {
             name                = "lambda-executor"
             attachments         = { }
         }
+        s3_replication          = {
+            domain              = "s3.amazonaws.com"
+            name                = "s3-replicator"
+            attachments         = { }
+        }
     }
     service_attachments         = flatten([
         for role_key, role in local.service_roles: [
