@@ -1,4 +1,12 @@
 locals {
+    # configurations
+    policies                = {
+        logs                = {
+            name            = "${var.namespace}-cloudwatch-policy"
+            description     = "Allows principal to publish to CloudWatch log groups"
+            policy          = data.aws_iam_policy_document.logging.json
+        }
+    }
     service_roles               = {
         api_gateway             = {
             domain              = "apigateway.amazonaws.com"
@@ -20,6 +28,7 @@ locals {
             attachments         = { }
         }
     }
+    # calculations
     service_attachments         = flatten([
         for role_key, role in local.service_roles: [
             for policy_key, policy_arn in role.attachments: {

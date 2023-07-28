@@ -27,22 +27,17 @@ data "aws_iam_policy_document" "logging" {
     }
 }
 
-resource "aws_iam_policy" "this" {
-    for_each                = {
-        logs                = {
-            name            = "${var.namespace}-cloudwatch-policy"
-            description     = "Allows principal to publish to CloudWatch log groups"
-            policy          = data.aws_iam_policy_document.logging.json
-        }
-    }
-
-    name                    = each.value.name
-    description             = each.value.description
-    policy                  = each.value.policy
-}
 
 # TODO
 # data "aws_iam_policy_document" "platform" { # TODO: policy for tenant access
 #     statement {
 #     }
 # }
+
+resource "aws_iam_policy" "this" {
+    for_each                = local.policies
+
+    name                    = each.value.name
+    description             = each.value.description
+    policy                  = each.value.policy
+}
