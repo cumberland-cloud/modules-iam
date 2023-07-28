@@ -17,6 +17,7 @@ No modules.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_services_roles"></a> [services\_roles](#output\_services\_roles) | n/a |
-| <a name="output_tenant_role"></a> [tenant\_role](#output\_tenant\_role) | n/a |
+| <a name="output_policies"></a> [policies](#output\_policies) | Map of IAM policies. |
+| <a name="output_services_roles"></a> [services\_roles](#output\_services\_roles) | Map of IAM Service roles. |
+| <a name="output_tenant_role"></a> [tenant\_role](#output\_tenant\_role) | Map of IAM tenant role attributes. |
 <!-- END_TF_DOCS -->  
