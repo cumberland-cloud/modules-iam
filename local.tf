@@ -10,7 +10,9 @@ locals {
         lambda                  = {
             domain              = "lambda.amazonaws.com"
             name                = "lambda-executor"
-            attachments         = { }
+            attachments         = { 
+                logs            = aws_iam_policy.this["logging"].arn
+            }
         }
         s3_replication          = {
             domain              = "s3.amazonaws.com"
