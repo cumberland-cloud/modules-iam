@@ -9,7 +9,9 @@ No modules.
 
 ## Inputs
 
-No inputs.
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| <a name="input_namespace"></a> [namespace](#input\_namespace) | Namespace of the application | `string` | n/a | yes |
 
 ## Outputs
 
