@@ -32,7 +32,7 @@ resource "aws_iam_policy" "this" {
         logs                = {
             name            = "${var.namespace}-cloudwatch-policy"
             description     = "Allows principal to publish to CloudWatch log groups"
-            policy          = aws_iam_policy_document.logging.json
+            policy          = data.aws_iam_policy_document.logging.json
         }
     }
 
