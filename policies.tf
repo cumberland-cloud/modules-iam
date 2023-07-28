@@ -13,6 +13,34 @@ data "aws_iam_policy_document" "service_assume_role" {
     }
 }
 
+data "aws_iam_policy_document" "logging" {
+    statement {
+        effect              = "Allow"
+
+        actions             = [
+        "logs:CreateLogGroup",
+        "logs:CreateLogStream",
+        "logs:PutLogEvents"
+        ]
+
+        resources           = ["arn:aws:logs:*:*:*"]
+    }
+}
+
+resource "aws_iam_policy" "this" {
+    for_each                = {
+        logs                = {
+            name            = "${var.namespace}-cloudwatch-policy"
+            description     = "Allows principal to publish to CloudWatch log groups"
+            policy          = aws_iam_policy_document.logging.json
+        }
+    }
+
+    name                    = each.value.name
+    description             = each.value.description
+    policy                  = each.value.policy
+}
+
 # TODO
 # data "aws_iam_policy_document" "platform" { # TODO: policy for tenant access
 #     statement {
