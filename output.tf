@@ -1,3 +1,14 @@
+output "policies" {
+    value               = {
+        for policy_key, policy in aws_iam_policy.this:
+            policy_key  => {
+                arn     = policy.arn
+                id      = policy.id
+                name    = policy.name
+            }
+    }
+}
+
 output "services_roles" {
     value               = {
         for role_key, role in aws_iam_role.service_roles:
