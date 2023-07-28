@@ -1,3 +1,3 @@
-# Terraform Modules: KMS
+# Terraform Modules: IAM
 
 ##
