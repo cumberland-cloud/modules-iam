@@ -13,7 +13,8 @@ data "aws_iam_policy_document" "service_assume_role" {
     }
 }
 
-data "aws_iam_policy_document" "platform" { # TODO: policy for tenant access
-    statement {
-    }
-}
+# TODO
+# data "aws_iam_policy_document" "platform" { # TODO: policy for tenant access
+#     statement {
+#     }
+# }
