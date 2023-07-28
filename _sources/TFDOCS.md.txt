@@ -1,0 +1,20 @@
+# Terraform Docs
+
+<!-- BEGIN_TF_DOCS -->
+
+
+## Modules
+
+No modules.
+
+## Inputs
+
+No inputs.
+
+## Outputs
+
+| Name | Description |
+|------|-------------|
+| <a name="output_services_roles"></a> [services\_roles](#output\_services\_roles) | n/a |
+| <a name="output_tenant_role"></a> [tenant\_role](#output\_tenant\_role) | n/a |
+<!-- END_TF_DOCS -->  
