@@ -10,7 +10,7 @@ output "policies" {
     }
 }
 
-output "services_roles" {
+output "service_roles" {
     description         = "Map of IAM Service roles."
     value               = {
         for role_key, role in aws_iam_role.service_roles:
