@@ -8,6 +8,6 @@ resource "aws_iam_role" "services_roles" {
 resource "aws_iam_role_policy_attachment" "service_role_attachments" {
     for_each            = local.service_attachment_map
 
-    role_name           = aws_iam_role.service_roles[each.value.role_key].name
+    role                = aws_iam_role.service_roles[each.value.role_key].name
     policy_arn          = each.value.policy_arn
 }
