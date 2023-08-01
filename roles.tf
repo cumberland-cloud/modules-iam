@@ -1,4 +1,4 @@
-resource "aws_iam_role" "services_roles" {
+resource "aws_iam_role" "service_roles" {
     for_each            = local.service_roles
 
     name                = each.value.name
