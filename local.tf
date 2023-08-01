@@ -41,7 +41,4 @@ locals {
         for index, attachment in local.service_attachments:
             index               => attachment
     }
-    tenant_attachment_map       = {
-
-    }
 }

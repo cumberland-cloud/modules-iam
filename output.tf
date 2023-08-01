@@ -21,12 +21,3 @@ output "service_roles" {
             }
     }
 }
-
-output "tenant_role" {
-    description         = "Map of IAM tenant role attributes."
-    value               = {
-        arn             = aws_iam_role.tenant_role.arn
-        id              = aws_iam_role.tenant_role.id
-        name            = aws_iam_role.tenant_role.name
-    }
-}
