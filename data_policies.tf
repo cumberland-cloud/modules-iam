@@ -13,7 +13,7 @@ data "aws_iam_policy_document" "service_assume_role" {
     }
 }
 
-data "aws_iam_policy_document" "logging" {
+data "aws_iam_policy_document" "logs" {
     statement {
         sid                 = "LogPerms"
         effect              = "Allow"

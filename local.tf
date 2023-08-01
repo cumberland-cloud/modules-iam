@@ -4,7 +4,7 @@ locals {
         logs                = {
             name            = "${var.namespace}-cloudwatch-policy"
             description     = "Allows principal to publish to CloudWatch log groups"
-            policy          = data.aws_iam_policy_document.logging.json
+            policy          = data.aws_iam_policy_document.logs.json
         }
     }
     service_roles               = {
@@ -19,7 +19,7 @@ locals {
             domain              = "lambda.amazonaws.com"
             name                = "lambda-executor"
             attachments         = { 
-                logs            = aws_iam_policy.this["logging"].arn
+                logs            = aws_iam_policy.this["logs"].arn
             }
         }
         s3_replication          = {
